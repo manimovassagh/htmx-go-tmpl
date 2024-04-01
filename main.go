@@ -1,19 +1,16 @@
 package main
 
 import (
-	"net/http"
+	"fmt"
 
 	"github.com/labstack/echo/v4"
-	"github.com/manimovassagh/htmx-g-tmpl/models"
 )
 
 func main() {
-	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		// Return the First user as JSON data
-		return c.JSON(http.StatusOK, models.First)
-	})
 
-	e.Logger.Fatal(e.Start(":8080"))
+	app := echo.New()
+	//e.GET("/user", helloHandler)
 
+	app.Start("8080")
+	fmt.Println("Check")
 }
